@@ -24,22 +24,23 @@ public class DinnerConstructor {
     }
 
     void genCombo(ArrayList<String> DishComboList, int numberOfCombos) {
-        String namePosition;
-        ArrayList<String> nameCategory;
+        String nameDish;
+        ArrayList<String> nameDishType;
 
         for (int i = 1; i <= numberOfCombos; i++) {
             ArrayList<String> comboLunch = new ArrayList<>();
             System.out.println("Комбо " + (i));
             for (String dishType : DishComboList) {
-                nameCategory = dinnerMenu.get(dishType);
-                namePosition = nameCategory.get(random.nextInt(nameCategory.size()));
-                comboLunch.add(namePosition);
+                nameDishType = dinnerMenu.get(dishType);
+                nameDish = nameDishType.get(random.nextInt(nameDishType.size()));
+                comboLunch.add(nameDish);
             }
             System.out.println(comboLunch);
+            //comboLunch.clear();
         }
     }
 
-    boolean checkTypeCategory(String typeCategory) {
-        return dinnerMenu.containsKey(typeCategory);
+    boolean checkTypeDish(String typeDish) {
+        return dinnerMenu.containsKey(typeDish);
     }
 }

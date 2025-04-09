@@ -63,8 +63,8 @@ public class Main {
         ArrayList<String> DishComboList = new ArrayList<>();
 
         while (!nextItem.isEmpty()) {
-            if (!dc.checkTypeCategory(nextItem)) {
-                System.out.println(nextItem + " нет в меню, введите другую категорию:");
+            if (!dc.checkTypeDish(nextItem)) {
+                System.out.println(nextItem + " нет в меню, введите другой тип блюда:");
             } else {
                 DishComboList.add(nextItem);
             }
