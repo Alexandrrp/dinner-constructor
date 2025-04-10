@@ -13,13 +13,17 @@ public class DinnerConstructor {
     }
 
     void updateMenu(String dishType, String dishName) {
-        if (dinnerMenu.containsKey(dishType)) {
-            ArrayList<String> nameDishList = dinnerMenu.get(dishType);
-            nameDishList.add(dishName);
-        } else {
+        if (!dinnerMenu.containsKey(dishType)) {
             ArrayList<String> nameDishList = new ArrayList<>();
             nameDishList.add(dishName);
             dinnerMenu.put(dishType, nameDishList);
+        } else {
+            ArrayList<String> nameDishList = dinnerMenu.get(dishType);
+            if (nameDishList.contains(dishName)) {
+                System.out.println("Такое блюдо уже есть в списке.");
+            } else {
+                nameDishList.add(dishName);
+            }
         }
     }
 
@@ -36,7 +40,6 @@ public class DinnerConstructor {
                 comboLunch.add(nameDish);
             }
             System.out.println(comboLunch);
-            //comboLunch.clear();
         }
     }
 
